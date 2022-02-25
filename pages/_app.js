@@ -1,16 +1,22 @@
 import {Fragment} from "react";
-import styled from "styled-components";
+import {createGlobalStyle} from "styled-components";
 
 function MyApp({Component, pageProps}) {
   return (
-    <GlobalContainer>
+    <Fragment>
+      <GlobalStyles />
       <Component {...pageProps} />
-    </GlobalContainer>
+    </Fragment>
   );
 }
 
 export default MyApp;
 
-const GlobalContainer = styled(Fragment)`
+const GlobalStyles = createGlobalStyle`
+html,
+body {
+  margin: 0;
+  overflow: hidden;
   height: 100%;
+}
 `;
